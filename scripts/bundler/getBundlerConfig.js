@@ -102,9 +102,6 @@ const getModule = (devEnv) => {
     use: [
       {
         loader: 'css-loader',
-        options: {
-          minimize: !devEnv,
-        }
       },
       {
         loader: 'sass-loader',
@@ -201,7 +198,6 @@ const getPlugins = (devEnv, audit, localServer) => {
   } else {
     plugins.push(
       new webpack.LoaderOptionsPlugin({
-        minimize: true,
         debug: false
       }),
       new CompressionWebpackPlugin({
